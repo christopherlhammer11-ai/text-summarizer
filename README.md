@@ -2,7 +2,7 @@
 
 **Offline extractive summarization without an LLM.** Text Summarizer uses TF-IDF-style scoring to pull the most important sentences from long text.
 
-Demo: **Related demo:** [Research Intake Layer](https://christopherhammer.dev/assets/videos/narrated/project-demos/research-intake-layer-narrated.mp4)
+**Related demo:** [Research Intake Layer](https://christopherhammer.dev/assets/videos/narrated/project-demos/research-intake-layer-narrated.mp4)
 
 ## Who Uses It
 
