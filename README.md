@@ -1,57 +1,51 @@
 # Text Summarizer
 
-CLI tool for extractive summarization using TF-IDF scoring without requiring an LLM.
+**Offline extractive summarization without an LLM.** Text Summarizer uses TF-IDF-style scoring to pull the most important sentences from long text.
 
-<!-- badges -->
+Demo: **Related demo:** [Research Intake Layer](https://christopherhammer.dev/assets/videos/narrated/project-demos/research-intake-layer-narrated.mp4)
 
-## What It Does
+## Who Uses It
 
-Text Summarizer (`summarize`) distills long text into concise summaries using TF-IDF, positional weighting, and signal-word scoring. Pure NLP algorithms—no API calls, no wait time.
+- High-volume workflows where LLM calls are too expensive
+- Offline preprocessing jobs
+- Research intake pipelines
+- Agents that need cheap first-pass document reduction
+- Students, analysts, and builders summarizing text locally
 
-## Features
+## Core Features
 
-- **Extractive Summarization**: Pulls key sentences directly from source
-- **TF-IDF Scoring**: Identifies important terms and concepts
-- **Configurable Output**: Text, bullets, or JSON format
-- **Position Awareness**: Favors sentences from introduction and conclusion
-- **Signal Words**: Recognizes "important", "critical", "note" markers
-- **Flexible Limits**: Set maxSentences and maxWords for any use case
+- Extractive summarization
+- TF-IDF-style scoring
+- Position and signal-word weighting
+- Text, bullets, and JSON output modes
+- Configurable sentence and word limits
+- No API key required
+
+## Example
+
+```bash
+summarize article.txt --max-sentences 5
+summarize article.txt --format bullets --max-words 200
+cat long-doc.txt | summarize --max-sentences 3
+```
 
 ## Quick Start
 
 ```bash
-npm install -g text-summarizer
-summarize "input.txt" --max-sentences 5
+npm install
+npm run build
+npm test
 ```
 
-## Usage
+## Portfolio Context
 
-```bash
-# Extract top sentences
-summarize article.txt --max-sentences 5
+Text Summarizer shows a practical instinct: not every AI workflow needs an expensive model call. Sometimes a fast local algorithm is the right first layer.
 
-# Output as bullet points
-summarize article.txt --format bullets --max-words 200
+---
 
-# JSON output with scores
-summarize article.txt --format json
+Built by **Christopher L. Hammer** - self-taught AI/product builder shipping local-first tools, demos, and real product surfaces.
 
-# Pipe input
-cat long-doc.txt | summarize --max-sentences 3
-```
+- Portfolio: [christopherhammer.dev](https://christopherhammer.dev)
+- Proof demos: [https://christopherhammer.dev#proof](https://christopherhammer.dev#proof)
+- GitHub: [christopherlhammer11-ai](https://github.com/christopherlhammer11-ai)
 
-## Tech Stack
-
-- Commander.js (CLI framework)
-- TF-IDF algorithm (scoring)
-- TypeScript (pure implementation)
-
-## Part of Genesis Marketplace
-
-Powers the summarization skill in the Genesis agent marketplace.
-
-## Author
-
-Christopher L. Hammer  
-GitHub: [christopherlhammer11-ai](https://github.com/christopherlhammer11-ai)  
-Sites: [hammercg.com](https://hammercg.com) | [hammerlockai.com](https://hammerlockai.com)
